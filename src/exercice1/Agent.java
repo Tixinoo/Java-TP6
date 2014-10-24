@@ -5,7 +5,7 @@ package exercice1;
  * @author Maxime BLAISE
  * @author Antoine NOSAL
  */
-public class Agent {
+public class Agent implements Runnable {
     
     /**
      * Nom de l'agent.
@@ -20,8 +20,6 @@ public class Agent {
     public Agent(String nom) {
         this.nom = nom;
     }
-    
-    
 
     public String getNom() {
         return nom;
@@ -30,6 +28,10 @@ public class Agent {
     public void setNom(String nom) {
         this.nom = nom;
     }
-    
+
+    @Override
+    public void run() {
+        
+    }
     
 }
