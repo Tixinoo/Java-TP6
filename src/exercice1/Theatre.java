@@ -6,35 +6,39 @@ package exercice1;
  * @author Antoine NOSAL
  */
 public class Theatre {
-    
+
     /**
      * Capacité du theatre.
      */
     private int nombrePlaces;
-    
+
     /**
      * tableau des places.
      */
     private Place[] places;
-    
+
+    private static final Theatre instance = new Theatre(100);
+
     /**
      * Constructeur d'un theatre
-     * 
+     *
      * @param nb nombre de place
      */
     private Theatre(int nb) {
         this.nombrePlaces = nb;
         this.places = new Place[this.nombrePlaces];
+        for (int i = 0; i < this.places.length; i++) {
+            this.places[i] = new Place();
+        }
     }
-    
+
     /**
      * Creation du theatre unique.
-     * 
-     * @param nb nombre de place du theatre
+     *
      * @return le theatre
      */
-    public static Theatre creerTheatre(int nb) {
-        return new Theatre(nb);
+    public static Theatre recupTheatre() {
+        return instance;
     }
 
     public int getNombrePlaces() {
@@ -45,13 +49,12 @@ public class Theatre {
         this.nombrePlaces = nombrePlaces;
     }
 
-    public Place[] getPlaces() {
-        return places;
+    public Place getPlaces(int i) {
+        return places[i];
     }
 
     public void setPlaces(Place[] places) {
         this.places = places;
     }
-    
-    
+
 }
