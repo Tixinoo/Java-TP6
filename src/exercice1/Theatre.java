@@ -13,12 +13,18 @@ public class Theatre {
     private int nombrePlaces;
     
     /**
+     * tableau des places.
+     */
+    private Place[] places;
+    
+    /**
      * Constructeur d'un theatre
      * 
      * @param nb nombre de place
      */
     private Theatre(int nb) {
         this.nombrePlaces = nb;
+        this.places = new Place[this.nombrePlaces];
     }
     
     /**
@@ -37,6 +43,14 @@ public class Theatre {
 
     public void setNombrePlaces(int nombrePlaces) {
         this.nombrePlaces = nombrePlaces;
+    }
+
+    public Place[] getPlaces() {
+        return places;
+    }
+
+    public void setPlaces(Place[] places) {
+        this.places = places;
     }
     
     
